@@ -1,10 +1,11 @@
 #!/bin/bash
+echo "write the name of the file you want to search for "
 read input
 if [ -f "$input" ] 
 then
-	touch $input.sh
+	mv $input $input.sh 
 	chmod +x $input.sh
 	./$input.sh
 else
-	touch $input
+	echo "file not found"
 fi
